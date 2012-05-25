@@ -1,0 +1,1617 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		
+		
+		<title>Chemical & Dyes Costing</title>
+                <link rel="stylesheet" href="media/css/demos.css" type="text/css" />
+			
+		
+		<script type="text/javascript" charset="utf-8" src="media/support/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="media/js/KeyTable.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			function fnMessage ( sMesg )
+			{
+				var n = document.getElementById('info');
+				n.innerHTML += sMesg+"<br>";
+				n.scrollTop = n.scrollHeight;
+			}
+			
+			$(document).ready( function () {
+				var keys = new KeyTable();
+				
+				/* Focus handler for all cells in last column */
+				keys.event.focus( 4, null, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - column)" );
+				} );
+				
+				/* Focus handler for all cells in 8th row */
+				keys.event.focus( null, 7, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - row)" );
+				} );
+				
+				/* Focus using coords. */
+				keys.event.focus( 1, 0, function( nNode ) {
+					keys.event.remove.focus( nNode );
+					fnMessage( "Cell 1,0 focus - this event has now been removed" );
+				} );
+				
+				keys.event.focus( 1, 3, function() {
+					fnMessage( "Cell 1,3 focus" );
+				} );
+				
+				/* focus with a node */
+				keys.event.focus( $('#example tbody tr:eq(2) td:eq(0)')[0], function() {
+					fnMessage( "Cell 0,2 focus" );
+				} );
+				
+				/* Blur using a node */
+				keys.event.blur( $('#example tbody tr:eq(1) td:eq(2)')[0], function() {
+					fnMessage( "Cell 1,2 blur" );
+				} );
+				
+				/* Blur using coords */
+				keys.event.blur( 2, 4, function() {
+					fnMessage( "Cell 2,4 blur" );
+				} );
+				
+				/* Action */
+				keys.event.action( 2, 2, function( nNode ) {
+					fnMessage( "Cell 2,2 action" );
+					if ( nNode.style.fontWeight == "" || nNode.style.fontWeight == "normal" ) {
+						nNode.style.fontWeight = "bold";
+					} else {
+						nNode.style.fontWeight = "normal";
+					}
+				} );
+				
+				keys.event.action( 2, 5, function( nNode ) {
+					fnMessage( "Cell 2,5 action" );
+					if ( nNode.style.fontStyle == "" ) {
+						nNode.style.fontStyle = "italic";
+					} else {
+						nNode.style.fontStyle = "";
+					}
+				} );
+			} );
+		</script>
+	</head>
+	<body id="kt_example">
+		<div id="container">
+			<div class="full_width big">
+				Requisition Details for the Order and Costing for the each Color.
+			</div>
+
+                     <br>
+                      <div>
+            	Date : 2012/04/30 - Monday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/09</td>
+                        <td>GRA-7534</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Brick</td>
+                        <td class="center">D</td>
+			<td class="center">172</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/07</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC </td>
+                        <td class="center">Navy</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">250</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+        </tbody>
+</table>
+                            <br>
+                      <div>
+            	Date : 2012/05/02 - Wednesday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/09</td>
+                        <td>GRA-7534</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Brick</td>
+                        <td class="center">D</td>
+			<td class="center">172</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/07</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC </td>
+                        <td class="center">Navy</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">250</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/10</td>
+                        <td>GRA-</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC Classic</td>
+                        <td class="center">Mango</td>
+                        <td class="center">M</td>
+			<td class="center">272</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/344</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC </td>
+                        <td class="center">Royal</td>
+                        <td class="center">D</td>
+			<td class="center">57.30</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/09</td>
+                        <td>GRA-</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC PK</td>
+                        <td class="center">D/Pink</td>
+                        <td class="center">M</td>
+			<td class="center">131</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>DO/02</td>
+                        <td></td>
+			<td>Super Tailor</td>
+			<td>Puma England </td>
+                        <td class="center">S/Blue</td>
+                        <td class="center">M</td>
+			<td class="center">196</td>
+                        <td class="center"></td>
+                        <td class="center">J/2</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center"></td>
+			<td class="center"></td>
+		</tr>
+        </tbody>
+</table>
+                        </div>
+                     <br>
+                      <div>
+            	Date : 2012/04/28 - Saturday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/09</td>
+                        <td>GRA-7534</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Aqva</td>
+                        <td class="center">M</td>
+			<td class="center">172</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">6790.62</td>
+			<td class="center">39.4</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/05</td>
+                        <td>GRA-7527</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">L/Blue</td>
+                        <td class="center">M</td>
+			<td class="center">131.2</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center">3265.82</td>
+			<td class="center">4699.41</td>
+                        <td class="center">7965.23</td>
+			<td class="center">60.71</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/07</td>
+                        <td>GRA-7532</td>
+			<td style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">Grey</td>
+                        <td class="center">M</td>
+			<td class="center">251.4</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center">5666.98</td>
+			<td class="center">5553.28</td>
+                        <td class="center">11220.26</td>
+			<td class="center">44.63</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/21</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+                        <td class="center">Red</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">63.9</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center">5040.33</td>
+			<td class="center">6743.72</td>
+                        <td class="center">11784.05</td>
+			<td class="center">184.41</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>DO/02</td>
+                        <td></td>
+			<td>Super Tailor</td>
+			<td>Puma England</td>
+                        <td class="center">S/Blue</td>
+                        <td class="center">D</td>
+			<td class="center">196</td>
+                        <td class="center"></td>
+                        <td class="center">J/2</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">21977.29</td>
+			<td class="center">112.12</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>DO/07</td>
+                        <td></td>
+			<td>S.T.I</td>
+			<td>Yellowline</td>
+                        <td class="center">White</td>
+                        <td class="center"></td>
+			<td class="center">405.5</td>
+                        <td class="center"></td>
+                        <td class="center">W/4</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">4575.62</td>
+			<td class="center">11.28</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>PDO/24</td>
+                        <td></td>
+			<td>Oshani Tex</td>
+			<td>Canvas</td>
+                        <td class="center">D.S.I Red</td>
+                        <td class="center"></td>
+			<td class="center">153.5</td>
+                        <td class="center"></td>
+                        <td class="center">Jigger</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">2878.68</td>
+			<td class="center">18.75</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/24</td>
+                        <td></td>
+			<td>Oshani Tex</td>
+			<td>Canvas</td>
+                        <td class="center">D.S.I Red</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">153.5</td>
+                        <td class="center"></td>
+                        <td class="center">Jigger</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">18872.01</td>
+			<td class="center">122.94</td>
+		</tr>
+        </tbody>
+</table>
+                        </div>
+                            <br>
+
+  <div>
+            	Date : 2012/04/27 - Friday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/16</td>
+                        <td></td>
+			<td>Fergasam</td>
+			<td>interlock</td>
+                        <td class="center">Blue</td>
+                        <td class="center">D</td>
+			<td class="center">129</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">14189.39</td>
+			<td class="center">109.99</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/09</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Yellow</td>
+                        <td class="center">M</td>
+			<td class="center">172</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">7439.59</td>
+			<td class="center">43.25</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/07</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">Maroon</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">267.9</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">16788.83</td>
+			<td class="center">21903.65</td>
+                        <td class="center">38692.48</td>
+			<td class="center">144.42</td>
+		</tr>
+                 <tr class="even_gradeA">
+			<td>K/05</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Lt/Green</td>
+                        <td class="center">M</td>
+			<td class="center">131.4</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center">2801.92</td>
+			<td class="center">3123.43</td>
+                        <td class="center">5925.35</td>
+			<td class="center">45.09</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>DO/04</td>
+                        <td></td>
+			<td>Rathna Stores</td>
+			<td>Redo</td>
+                        <td class="center">White</td>
+                        <td class="center">L</td>
+			<td class="center">399</td>
+                        <td class="center"></td>
+                        <td class="center">W/4</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">7514.65</td>
+			<td class="center">18.83</td>
+		</tr>
+                 <tr class="even_gradeA">
+			<td>DO/02</td>
+                        <td></td>
+			<td>Super Tailors</td>
+			<td>Puma England</td>
+                        <td class="center">D/Blue</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">193.20</td>
+                        <td class="center"></td>
+                        <td class="center">J/2</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">30672.15</td>
+			<td class="center">158.75</td>
+		</tr>
+
+        </tbody>
+</table>
+                            
+                                      <br>
+  <div>
+            	Date : 2012/04/26 - Thursday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/15</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">A33 Nude</td>
+                        <td class="center">L</td>
+			<td class="center">20.5</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">W/1</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">1159.44</td>
+			<td class="center">56.55</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>CDO/08</td>
+                        <td></td>
+			<td>Hashim Bhai</td>
+			<td>100% Cotton</td>
+                        <td class="center">White</td>
+                        <td class="center">L</td>
+			<td class="center">195</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">3426.8</td>
+			<td class="center">17.57</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/06</td>
+                        <td>GRA-7531</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC </td>
+                        <td class="center">White</td>
+                        <td class="center">L</td>
+			<td class="center">464</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">10261.69</td>
+                        <td class="center">22.11</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/11</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>30/1 Cotton </td>
+                        <td class="center">Carbolt/Blue</td>
+                        <td class="center">D</td>
+			<td class="center">9</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">S/J</td>
+                        <td class="center"></td>
+			<td class="center"</td>
+                        <td class="center">1523.47</td>
+			<td class="center">169.27</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/08</td>
+                        <td>GRA-7533</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 fine PK</td>
+                        <td class="center">D/Purple</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">272.4</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">10720.82</td>
+			<td class="center">19729.43</td>
+                        <td class="center">30450.25</td>
+			<td class="center">111.78</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>DO/</td>
+                        <td></td>
+			<td>S.T.I</td>
+			<td>Puma England</td>
+                        <td class="center">Blackish</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">291</td>
+                        <td class="center"></td>
+                        <td class="center">J/2</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">37224.72</td>
+			<td class="center">127.92</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/05</td>
+                        <td>GRA-7527</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Lemon Yellow</td>
+                        <td class="center">L</td>
+			<td class="center">131.3</td>
+                        <td class="center"></td>
+                        <td class="center">J/10</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">2720.21</td>
+			<td class="center">20.71</td>
+		</tr>
+
+        </tbody>
+</table>
+                        </div>
+                
+                     <br>
+  <div>
+            	Date : 2012/04/23 - Monday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/16</td>
+                        <td></td>
+			<td>Fergasam</td>
+			<td>interlock</td>
+                        <td class="center">Blue</td>
+                        <td class="center">D</td>
+			<td class="center">115</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">12042.36</td>
+			<td class="center">104.71</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/5</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">10.5</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">S/J</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">1315.4</td>
+			<td class="center">125.27</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/363</td>
+                        <td>GRA-7403</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC Classic</td>
+                        <td class="center">Purple</td>
+                        <td class="center">L</td>
+			<td class="center">173.5</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center">3600.44</td>
+			<td class="center">3277.44</td>
+                        <td class="center">6877.88</td>
+			<td class="center">39.64</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/363</td>
+                        <td>GRA-7403</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">T/Blue</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">172.2</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/2</td>
+                        <td class="center">7494.22</td>
+			<td class="center">13549.23</td>
+                        <td class="center">21043.45</td>
+			<td class="center">122.20</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/363</td>
+                        <td>GRA-7403</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Lt/Mint</td>
+                        <td class="center">L</td>
+			<td class="center">170</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center">4104.54</td>
+			<td class="center">4124.18</td>
+                        <td class="center">8228.72</td>
+			<td class="center">48.40</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Pink</td>
+                        <td class="center">M</td>
+			<td class="center">316</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">6920.02</td>
+			<td class="center">8053.76</td>
+                        <td class="center">14973.78</td>
+			<td class="center">47.38</td>
+		</tr>
+                
+        </tbody>
+</table>
+                        </div>
+                    <br>
+  <div>
+            	Date : 2012/04/21 - Saturday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/16</td>
+                        <td></td>
+			<td>Fergasam</td>
+			<td>interlock</td>
+                        <td class="center">D/Purple</td>
+                        <td class="center">M</td>
+			<td class="center">215</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">6837.38</td>
+			<td class="center">31.80</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/17</td>
+                        <td></td>
+			<td>fergasam</td>
+			<td>interlock</td>
+                        <td class="center">Spanish Red</td>
+                        <td class="center">M</td>
+			<td class="center">61.5</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">2833.05</td>
+			<td class="center">46.06</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">U.N.P.Green</td>
+                        <td class="center">M</td>
+			<td class="center">236.7</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center">8167.94</td>
+			<td class="center">17059.10</td>
+                        <td class="center">8891.16</td>
+			<td class="center">72.07</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">193.9</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">7027.35</td>
+			<td class="center">6247.57</td>
+                        <td class="center">13274.92</td>
+			<td class="center">68.46</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">P/Green</td>
+                        <td class="center">M</td>
+			<td class="center">237.1</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/2</td>
+                        <td class="center">4898.58</td>
+			<td class="center">6883.47</td>
+                        <td class="center">11782.05</td>
+			<td class="center">49.69</td>
+		</tr>
+                
+        </tbody>
+</table>
+                     <br>
+  <div>
+            	Date : 2012/04/20 - Friday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/13</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>interlock</td>
+                        <td class="center">Tomato</td>
+                        <td class="center">M</td>
+			<td class="center">53</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">2815.94</td>
+			<td class="center">53.13</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/16</td>
+                        <td></td>
+			<td>fergasam</td>
+			<td>interlock</td>
+                        <td class="center">Plum</td>
+                        <td class="center">D</td>
+			<td class="center">131</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">9499.46</td>
+			<td class="center">72.51</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>PDO/15</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">A33 Nude</td>
+                        <td class="center">L</td>
+			<td class="center">20.5</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">W/1</td>
+                        <td class="center"></td>
+			<td class="center"></td>
+                        <td class="center">1422</td>
+			<td class="center">69.36</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/14</td>
+                        <td></td>
+			<td>Citilites</td>
+			<td>Tricot</td>
+                        <td class="center">Maroon</td>
+                        <td class="center"></td>
+			<td class="center">155</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center">8968.92</td>
+			<td class="center">pending</td>
+                        <td class="center">8968.92</td>
+			<td class="center">57.86</td>
+		</tr>
+        </tbody>
+</table>
+                    <br>
+  <div>
+            	Date : 2012/04/05 - Thursday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">T/Blue</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">237.75</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/3</td>
+                        <td class="center">10156.66</td>
+			<td class="center">13576.37</td>
+                        <td class="center">23733.03</td>
+			<td class="center">99.82</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">Sky Blue</td>
+                        <td class="center">M</td>
+			<td class="center">236.9</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">5604.67</td>
+			<td class="center">9831.32</td>
+                        <td class="center">15435.99</td>
+			<td class="center">65.15</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/363</td>
+                        <td>GRA-7403</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">Sky Blue</td>
+                        <td class="center"></td>
+			<td class="center">174.15</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center">3728.65</td>
+			<td class="center">pending</td>
+                        <td class="center">3728.65</td>
+			<td class="center">--</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/345</td>
+                        <td>GRA-7405</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">L/Green</td>
+                        <td class="center">L</td>
+			<td class="center">91.8</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center">2295.45</td>
+			<td class="center">2752.00</td>
+                        <td class="center">5047.45</td>
+			<td class="center">54.98</td>
+		</tr>
+                  <tr class="odd_gradeA">
+			<td>K/345</td>
+                        <td>GRA-7405</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">Lt/Blue</td>
+                        <td class="center">M</td>
+			<td class="center">90</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center">4606.90</td>
+			<td class="center">4574.09</td>
+                        <td class="center">9180.99</td>
+			<td class="center">102.01</td>
+		</tr>
+                 <tr class="even_gradeA">
+			<td>DO/01</td>
+                        <td></td>
+			<td>Rathna Stores</td>
+			<td>Redo</td>
+                        <td class="center">White</td>
+                        <td class="center"></td>
+			<td class="center">398.50</td>
+                        <td class="center">NA</td>
+                        <td class="center">W/4</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">9658.54</td>
+			<td class="center">24.23</td>
+		</tr>
+        </tbody>
+</table>
+
+
+			</div>
+                    <br>
+                    
+ <div>
+            	Date : 2012/04/04 - Wednesday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/348</td>
+                        <td>GRA-7410</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 Cotton</td>
+                        <td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">39</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">W/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">5002.58</td>
+			<td class="center">128.27</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/523</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>Interlock</td>
+			<td class="center">Lapis</td>
+                        <td class="center">D</td>
+			<td class="center">62</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">7313.47</td>
+			<td class="center">117.95</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>PDO/509</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+                        <td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">250</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/2</td>
+                        <td class="center">8407.83</td>
+			<td class="center">13220.00</td>
+                        <td class="center">21627.83</td>
+			<td class="center">86.51</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/358</td>
+                        <td></td>
+			<td   style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+			<td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">126.3</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/8</td>
+                        <td class="center">4964.26</td>
+			<td class="center">8657.60</td>
+                        <td class="center">13621.86</td>
+			<td class="center">107.85</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>PDO/494</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+                        <td class="center">Orange</td>
+                        <td class="center">M</td>
+			<td class="center">63</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center">1814.86</td>
+			<td class="center">2039.10</td>
+                        <td class="center">3853.96</td>
+			<td class="center">61.17</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/494</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+                        <td class="center">Green</td>
+                        <td class="center">M</td>
+			<td class="center">62</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center">2542.27</td>
+			<td class="center">2834.35</td>
+                        <td class="center">5376.62</td>
+			<td class="center">86.71</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>K/345</td>
+                         <td>GRA-7405</td>
+			<td   style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+                        <td class="center">L/Purple</td>
+                        <td class="center">L</td>
+			<td class="center">90</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/10</td>
+                        <td class="center">2225.69</td>
+			<td class="center">1841.84</td>
+                        <td class="center">4067.53</td>
+			<td class="center">45.19</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/360</td>
+                        <td></td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC Classic</td>
+                        <td class="center">Black</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">207.3</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center">7727.25</td>
+			<td class="center">13213.45</td>
+                        <td class="center">20940.70</td>
+			<td class="center">101.01</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>PDO/510</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+                        <td class="center">Red</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">61.3</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/9</td>
+                        <td class="center">4870.65</td>
+			<td class="center">6867.90</td>
+                        <td class="center">11738.55</td>
+			<td class="center">191.49</td>
+		</tr>
+        </tbody>
+</table>
+                            <br>
+                            <div>
+            	Date : 2012/04/03 - Tuesday
+            </div>
+
+
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                       <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>K/348</td>
+                        <td>GRA-7410</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 Cotton</td>
+                        <td class="center">Fushia</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">119</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/8</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">22903.40</td>
+			<td class="center">192.00</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/04</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>30/1 Cotton</td>
+			<td class="center">White</td>
+                        <td class="center">L</td>
+			<td class="center">10</td>
+                         <td class="center">Scouring/Bleaching & Dyeing</td>
+                         <td class="center">S/J</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">70.08</td>
+			<td class="center">7.008</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>QK/A9</td>
+                        <td></td>
+			<td>Quick Knit</td>
+			<td>30/1 PC</td>
+                        <td class="center">White</td>
+                        <td class="center">L</td>
+			<td class="center">48.7</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">W/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">1945.58</td>
+			<td class="center">39.95</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+			<td class="center">Red</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">237.25</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/3</td>
+                        <td class="center">9858.49</td>
+			<td class="center">22238.62</td>
+                        <td class="center">32097.11</td>
+			<td class="center">135.28</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/354</td>
+                        <td>GRA-7432</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>20/1 PC PK</td>
+                        <td class="center">G/yellow</td>
+                        <td class="center">L</td>
+			<td class="center">237.40</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/4</td>
+                        <td class="center">4934.25</td>
+			<td class="center">4628.18</td>
+                        <td class="center">9562.43</td>
+			<td class="center">40.27</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/345</td>
+                        <td>GRA-7405</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC </td>
+			<td class="center">Pink</td>
+                        <td class="center">M</td>
+			<td class="center">90</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/10</td>
+                        <td class="center">2536.61</td>
+			<td class="center">2831.30</td>
+                        <td class="center">5367.91</td>
+			<td class="center">59.64</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/363</td>
+                        <td>GRA-7403</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC </td>
+                        <td class="center">Navy</td>
+                        <td class="center">Ex/D</td>
+			<td class="center">337</td>
+                        <td class="center">Bleaching & Dyeing</td>
+                        <td class="center">J/11</td>
+                        <td class="center">22473.93</td>
+			<td class="center">45454.23</td>
+                        <td class="center">67928.16</td>
+			<td class="center">201.56</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>DO/77</td>
+                        <td></td>
+			<td>L.I.S Book shop</td>
+			<td>Puma England</td>
+			<td class="center">Ash</td>
+                        <td class="center">M</td>
+			<td class="center">138.20</td>
+                         <td class="center">NA</td>
+                         <td class="center">J/2</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">5572.84</td>
+			<td class="center">40.32</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>DO/77</td>
+                        <td></td>
+			<td>L.I.S Book shop</td>
+			<td>Puma England</td>
+                        <td class="center">Ash</td>
+                        <td class="center">M</td>
+			<td class="center">235</td>
+                        <td class="center">NA</td>
+                        <td class="center">J/2</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">11035.86</td>
+			<td class="center">46.96</td>
+		</tr>
+        </tbody>
+</table>
+                        </div>
+                            <br>
+			<div>
+            	Date : 2012/04/02 - Monday
+            </div>
+			
+			
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Order No:</th>
+                        <th>GRN No:</th>
+			<th>Customer</th>
+			<th>Fabric</th>
+			<th>Color</th>
+                        <th>Shade</th>
+			<th>Total(kg)</th>
+                        <th>Process</th>
+                        <th>Machine No:</th>
+                        <th>Polyester Cost(LKR)</th>
+                        <th>Cotton Cost(LKR)</th>
+                        <th>Total Cost(LKR)</th>
+                        <th>Cost per 1kg(LKR)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>PDO/528</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>Interlock</td>
+                        <td class="center">Grape Juice</td>
+                        <td class="center">M</td>
+			<td class="center">23</td>
+                        <td class="center">Scouring/Bleaching & Dyeing</td>
+                        <td class="center">J/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">2364.71</td>
+			<td class="center">102.81</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>PDO/528</td>
+                        <td></td>
+			<td>Timex</td>
+			<td>Interlock</td>
+			<td class="center">Morve</td>
+                        <td class="center">M</td>
+			<td class="center">31</td>
+                         <td class="center">Scouring/Bleaching & Dyeing</td>
+                         <td class="center">J/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">3097.38</td>
+			<td class="center">99.91</td>
+		</tr>
+                <tr class="odd_gradeA">
+			<td>K/348</td>
+                        <td>GRA-7410</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving </td>
+			<td>20/1 Cotton</td>
+			<td class="center">Navy</td>
+                       <td class="center">D</td>
+			<td class="center">119</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/8</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">14175.89</td>
+			<td class="center">119.12</td>
+		</tr>
+		 <tr class="even_gradeA">
+			<td>PDO/527</td>
+                        <td></td>
+			<td>Fergasam</td>
+			<td>Interlock</td>
+			<td class="center">Ivory</td>
+                        <td class="center">L</td>
+			<td class="center">163</td>
+                         <td class="center">Scouring/Bleaching & Dyeing</td>
+                         <td class="center">J/11</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">4366.10</td>
+			<td class="center">26.78</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>NA</td>
+                         <td></td>
+			<td>Maria Lanka </td>
+			<td>Cotton /Rib</td>
+			<td class="center">Grey</td>
+                        <td class="center">L</td>
+			<td class="center">9</td>
+                         <td class="center">Color Adjustment/Hot Wash</td>
+                         <td class="center">W/1</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">1184.21</td>
+			<td class="center">131.57</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>K/345</td>
+                        <td>GRA-7405</td>
+			<td  style="background-color: #FFB3BE;">Sigiri Weaving</td>
+			<td>30/1 PC</td>
+			<td class="center">Peach</td>
+                        <td class="center">L</td>
+			<td class="center">90</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/10</td>
+                        <td class="center">2242.86</td>
+			<td class="center">2156.61</td>
+                        <td class="center">4399.47</td>
+			<td class="center">48.88</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>PDO/510</td>
+                        <td></td>
+			<td>Skansco</td>
+			<td>20/1 PC</td>
+			<td class="center">Royal Blue</td>
+                        <td class="center">D</td>
+			<td class="center">60.5</td>
+                         <td class="center">Bleaching & Dyeing</td>
+                         <td class="center">J/9</td>
+                        <td class="center">3338.60</td>
+			<td class="center">5308.71</td>
+                        <td class="center">8647.31</td>
+			<td class="center">142.93</td>
+		</tr>
+                <tr class="even_gradeA">
+			<td>DO/77</td>
+                        <td></td>
+			<td>L.I.S Book Shop</td>
+			<td>Puma England</td>
+			<td class="center">Ash</td>
+                        <td class="center">M</td>
+			<td class="center">235</td>
+                         <td class="center">NA</td>
+                         <td class="center">J/2</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">7222.12</td>
+			<td class="center">30.73</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>DO/77</td>
+                        <td></td>
+			<td>L.I.S Book Shop</td>
+			<td>Puma England</td>
+			<td class="center">Ash</td>
+                        <td class="center">M</td>
+			<td class="center">138.2</td>
+                         <td class="center">NA</td>
+                         <td class="center">J/2</td>
+                        <td class="center">NA</td>
+			<td class="center">NA</td>
+                        <td class="center">7258.56</td>
+			<td class="center">52.52</td>
+		</tr>
+	</tbody>
+</table>
+                        </div>
+               
+                    
+                        </div>
+                            <br>
+ 
+			<div class="spacer"></div>
+			
+			
+			<div>
+             <!--   <a href="Sigiri Web App/menu.jsp"><h1>Back to Main Menu</h1></a>-->
+            </div>
+                        </div>
+			
+			
+			
+			
+			<div id="footer" style="text-align:center;">
+				<span style="font-size:10px;">
+					Dyes & Chemical Costing Table 2012.<br>
+					</span>
+			</div>
+		</div>
+	</body>
+</html>

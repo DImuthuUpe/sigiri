@@ -1,0 +1,426 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		
+		
+		<title>Stock Table - Chemical</title>
+		<style type="text/css" title="currentStyle">
+			@import "media/css/demos.css";
+		</style>
+		<script type="text/javascript" charset="utf-8" src="media/support/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="media/js/KeyTable.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			function fnMessage ( sMesg )
+			{
+				var n = document.getElementById('info');
+				n.innerHTML += sMesg+"<br>";
+				n.scrollTop = n.scrollHeight;
+			}
+			
+			$(document).ready( function () {
+				var keys = new KeyTable();
+				
+				/* Focus handler for all cells in last column */
+				keys.event.focus( 4, null, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - column)" );
+				} );
+				
+				/* Focus handler for all cells in 8th row */
+				keys.event.focus( null, 7, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - row)" );
+				} );
+				
+				/* Focus using coords. */
+				keys.event.focus( 1, 0, function( nNode ) {
+					keys.event.remove.focus( nNode );
+					fnMessage( "Cell 1,0 focus - this event has now been removed" );
+				} );
+				
+				keys.event.focus( 1, 3, function() {
+					fnMessage( "Cell 1,3 focus" );
+				} );
+				
+				/* focus with a node */
+				keys.event.focus( $('#example tbody tr:eq(2) td:eq(0)')[0], function() {
+					fnMessage( "Cell 0,2 focus" );
+				} );
+				
+				/* Blur using a node */
+				keys.event.blur( $('#example tbody tr:eq(1) td:eq(2)')[0], function() {
+					fnMessage( "Cell 1,2 blur" );
+				} );
+				
+				/* Blur using coords */
+				keys.event.blur( 2, 4, function() {
+					fnMessage( "Cell 2,4 blur" );
+				} );
+				
+				/* Action */
+				keys.event.action( 2, 2, function( nNode ) {
+					fnMessage( "Cell 2,2 action" );
+					if ( nNode.style.fontWeight == "" || nNode.style.fontWeight == "normal" ) {
+						nNode.style.fontWeight = "bold";
+					} else {
+						nNode.style.fontWeight = "normal";
+					}
+				} );
+				
+				keys.event.action( 2, 5, function( nNode ) {
+					fnMessage( "Cell 2,5 action" );
+					if ( nNode.style.fontStyle == "" ) {
+						nNode.style.fontStyle = "italic";
+					} else {
+						nNode.style.fontStyle = "";
+					}
+				} );
+			} );
+		</script>
+	</head>
+	<body id="kt_example">
+		<div id="container">
+			<div class="full_width big">
+				Current Stock - Chemicals
+			</div>
+			<div>
+            	 <!--   <a href="Sigiri Web App/menu.jsp"><h1>Back to Main Menu</h1></a>--> 
+            </div>
+			
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Item Code</th>
+			<th>Item Description</th>
+			<th>Unit Price(LKR)</th>
+			<th>Current Qty(kg)</th>
+			<th>Reorder Level(kg)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>CHE/001</td>
+			<td>Acitic Acid</td>
+			<td>132.00 </td>
+			<td class="center">430.00</td>
+			<td class="center">60.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/002</td>
+			<td>Adisil ME</td>
+			<td>00.00</td>
+			<td class="center">120.00</td>
+			<td class="center">20.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/003</td>
+			<td>Amonium Salphate</td>
+			<td>00.00</td>
+			<td class="center">200.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/004</td>
+			<td>Avirol 712</td>
+			<td>00.00</td>
+			<td class="center">155.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/005</td>
+			<td>Antispumin DNF Conc</td>
+			<td>575.00</td>
+			<td class="center">70.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/006</td>
+			<td>Biaklestase L 150</td>
+			<td>365.00</td>
+			<td class="center">40.00</td>
+			<td class="center">10.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/007</td>
+			<td>Biostone C20</td>
+			<td>280.00</td>
+			<td class="center">87.00</td>
+			<td class="center">30.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/008</td>
+			<td>Bond AE950A</td>
+			<td>00.00</td>
+			<td class="center">300.00</td>
+			<td class="center">60.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/009</td>
+			<td>Bond SD</td>
+			<td>170.00</td>
+			<td class="center">1200.00</td>
+			<td class="center">120.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/010</td>
+			<td>Caustic Soda</td>
+			<td>74.00</td>
+			<td class="center">1200.00</td>
+			<td class="center">200.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/011</td>
+			<td>Detergent MC</td>
+			<td>00.00</td>
+			<td class="center">85.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/012</td>
+			<td>Dyapol RC-9</td>
+			<td>670.00</td>
+			<td class="center">135.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/013</td>
+			<td>Dyapol ECO</td>
+			<td>310.00</td>
+			<td class="center">51.00</td>
+			<td class="center">40.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/014</td>
+			<td>Echosoft 250</td>
+			<td>00.00</td>
+			<td class="center">35.00</td>
+			<td class="center">25.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/015</td>
+			<td>Fixamine OF Conc</td>
+			<td>675.00</td>
+			<td class="center">50.00</td>
+			<td class="center">20.00</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>CHE/016</td>
+			<td>Foryl JA</td>
+			<td>265.00</td>
+			<td class="center">112.00</td>
+			<td class="center">120.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/017</td>
+			<td>Glauber Salt</td>
+			<td>26.50</td>
+			<td class="center">28410.00</td>
+			<td class="center">6000.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/018</td>
+			<td>HCl</td>
+			<td>00.00</td>
+			<td class="center">240.00</td>
+			<td class="center">100</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>CHE/019</td>
+			<td>Hydrogen Peroxide</td>
+			<td>93.00</td>
+			<td class="center">1190.00</td>
+			<td class="center">200.00</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>CHE/020</td>
+			<td>Hydros</td>
+			<td>00.00</td>
+			<td class="center">50.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/021</td>
+			<td>Levegal RL</td>
+			<td>375.21</td>
+			<td class="center">140.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/022</td>
+			<td>Levetol DA-C</td>
+			<td>00.00</td>
+			<td class="center">8.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/023</td>
+			<td>Melenol 50V</td>
+			<td>360.00</td>
+			<td class="center">300.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/024</td>
+			<td>Magnisium Chloride</td>
+			<td>40.00</td>
+			<td class="center">105.00</td>
+			<td class="center">25.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/025</td>
+			<td>Monopol NX Con</td>
+			<td>165.00</td>
+			<td class="center">260.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/026</td>
+			<td>Neoporin DJ-10</td>
+			<td>00.00</td>
+			<td class="center">5.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/027</td>
+			<td>Oklever DRD</td>
+			<td>330.00</td>
+			<td class="center">150.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/028</td>
+			<td>Oil Remobe D 170</td>
+			<td>425.00</td>
+			<td class="center">30.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/029</td>
+			<td>Oxalic Acid</td>
+			<td>130.00</td>
+			<td class="center">60.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/030</td>
+			<td>Perintol FHB Conc</td>
+			<td>725.00</td>
+			<td class="center">200.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/031</td>
+			<td>Securon 540</td>
+			<td>500.00</td>
+			<td class="center">283.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/032</td>
+			<td>Perigen KPS</td>
+			<td>00.00</td>
+			<td class="center">15.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/033</td>
+			<td>Wetting Agent A-113</td>
+			<td>200.00</td>
+			<td class="center">270.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/034</td>
+			<td>Stabilol ZM</td>
+			<td>150.00</td>
+			<td class="center">180.00</td>
+			<td class="center">25.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/035</td>
+			<td>Recknit RF</td>
+			<td>00.00</td>
+			<td class="center">90.00</td>
+			<td class="center">25.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/036</td>
+			<td>Kottoclarin KD</td>
+			<td>00.00</td>
+			<td class="center">115.00</td>
+			<td class="center">10.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/037</td>
+			<td>Soda Ash</td>
+			<td>50.00</td>
+			<td class="center">1700.00</td>
+			<td class="center">200.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/038</td>
+			<td>Sun white COB</td>
+			<td>520.00</td>
+			<td class="center">30.00</td>
+			<td class="center">5.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/039</td>
+			<td>Synowhite SB 100</td>
+			<td>450.00</td>
+			<td class="center">25.00</td>
+			<td class="center">5.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/040</td>
+			<td>Tannex Noveco</td>
+			<td>386.90</td>
+			<td class="center">720.00</td>
+			<td class="center">120.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/041</td>
+			<td>Ultraphore SFG</td>
+			<td>2350.00</td>
+			<td class="center">130.00</td>
+			<td class="center">25.00</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>CHE/042</td>
+			<td>Levagal DIF</td>
+			<td>550.00</td>
+			<td class="center">160.00</td>
+			<td class="center">50.00</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>CHE/043</td>
+			<td>Developer AM</td>
+			<td>450.00</td>
+			<td class="center">45.00</td>
+			<td class="center">N/A</td>
+		</tr>
+		
+	</tbody>
+</table>
+
+
+
+			</div>
+			<div class="spacer"></div>
+			<div>
+                <!--   <a href="Sigiri Web App/menu.jsp"><h1>Back to Main Menu</h1></a>--> 
+            </div>
+			
+			
+			
+			
+			
+			
+			<div id="footer" style="text-align:center;">
+				<span style="font-size:10px;">
+					Chemical Stock Table 2012.<br>
+					</span>
+			</div>
+		</div>
+	</body>
+</html>

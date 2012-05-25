@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="icon" href="images/logo_link.png">
+<title>Sigiri - Stock Management</title>
+<link rel="stylesheet" href="css/div_styles.css" type="text/css" />
+<link rel="stylesheet" href="verticaltabs/css/verticaltabs.css" />
+<link rel="stylesheet" href="css/formstyle.css" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/tcal.css" />
+
+<script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript" src="js/tcal.js"></script>   
+ <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="verticaltabs/js/verticaltabs.pack.js"></script> <!--http://dean.edwards.name/packer/-->
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#textExample").verticaltabs({speed: 500,slideShow: false,activeIndex:0});
+		
+	});
+</script>   
+
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.table.addrow.js"></script>
+<script type="text/javascript">
+$("document").ready(function(){
+	$(".alternativeRow").btnAddRow({oddRowCSS:"oddRow",evenRowCSS:"evenRow"});
+	$(".delRow").btnDelRow();
+});
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+  <table width="100%" height="114">
+    <tr>
+      <td width="116" height="108"><center><img src="images/logo.png"/></center></td>
+      <td width="612" style="padding-left:8px;color:#000079;font-size:20px;font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;">
+      
+        <p>Sigiri Textile Industries (Pvt) Ltd.        </p>
+        <p>No:227/1,
+          Galle Road,Katubedda,
+          Mt.Lavinia,
+      Sri Lanka. </p></td>
+      <td width="458">&nbsp;</td>
+    </tr>
+  </table>
+
+  <!-- Text Example -->
+	<div class="verticalslider" id="textExample" style="width:95%;height:1100px;">
+        
+        <ul class="verticalslider_contents">
+         <li style="padding-left:40px;margin-top:10px;">
+           
+           
+		<!-- ============================== Fieldset 1 ============================== -->
+		<fieldset style="height:950px;width:1170px;margin-left:2px;">
+        	<legend>Add Dyes & Chemical Requisition</legend>
+            
+    
+            <div style="height:723px;width:1170px;overflow:auto;margin-bottom:44px;">
+            	<style>
+		.atable{
+			
+			margin-left:10px;
+			
+		}
+		.atable th{
+			
+			background:#BFBFFF;
+			font-weight:bold;
+			
+		}
+		.atable td{
+			padding:4px;
+			-webkit-border-radius:5px;
+		}
+		.oddRow{
+			background:#FFFFFF;
+		}
+		.evenRow{
+			background:#64B1FF;
+		}
+			</style>
+            
+		<table class="atable">
+			<tr>
+            <td><input type="button" value="Add" class="alternativeRow" style="width:45px;"/></td>
+            <td><h4 align="center">Category</h4></td>
+            <td><h4 align="center">Sub Category</h4></td>
+            <td><h4 align="center">Item Description</h4></td>
+            <td><h4 align="center">Unit</h4></td>                     
+            <td><h4 align="center">Unit Price</h4></td>
+            <td><h4 align="center">Current Qty</h4></td>
+            <td><h4 align="center">Value Of Qty</h4></td>
+            <td><h4 align="center">Required Qty</h4></td>
+            <td><h4 align="center">Required Value</h4></td>
+            
+            <td style="width:24px;"></td>
+            </tr>
+
+			<tr>
+            <td></td>
+            <td><center><select class="" name="menu" style="width:100px;">
+					<option value="0" selected>Select</option>
+					<option value="1">one</option>
+					<option value="2">two</option>
+					<option value="3">three</option>
+					</select>
+                    </center>
+                    </td>
+            <td><center><select class="" name="menu" style="width:100px;">
+					<option value="0" selected>Select</option>
+					<option value="1">one</option>
+					<option value="2">two</option>
+					<option value="3">three</option>
+					</select>
+                    </center>
+                    </td>
+            <td><center><select class="" name="menu" style="width:210px;">
+					<option value="0" selected>Select Item</option>
+					<option value="1">one</option>
+					<option value="2">two</option>
+					<option value="3">three</option>
+					</select>
+                    </center>
+                    </td>
+                    <td><center><select class="" name="menu" style="width:65px;">
+					<option value="0" selected>Select</option>
+					<option value="1">g</option>
+					<option value="2">kg</option>
+					<option value="3">t</option>
+					</select>
+                    </center>
+                    </td>
+                    <td>
+                    <input type="text" size="9"/>
+                    </td>
+                     <td>
+                    <input type="text" size="10"/>
+                    </td>
+                    <td>
+                    <input type="text" size="11"/>
+                    </td>
+                    <td>
+                    <input type="text" size="9"/>
+                    </td>
+                    <td>
+                    <input type="text" size="9"/>
+                    </td>
+			<td><img src="images/cross.png" class="delRow" border="0"></td>
+            </tr>
+			
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>                                 
+            <td></td>
+            <td><input type="text" size="9"/></td>
+            <td><input type="text" size="10"/></td>
+            <td><input type="text" size="11"/></td>
+			<td> <input type="text" size="9"/></td>
+            <td> <input type="text" size="9"/></td>
+			<td></td>
+            </tr>
+	</table>
+			
+            </div>
+                      
+            <ul>
+            
+               <P><label for="input-nine" class="float"  style="padding-top:10px;"><strong>Notes:</strong></label><br />
+				<textarea rows="1" cols="50"  class="inp-text" id="address"name="input-address" style="width: 400px; height: 80px; margin: 0 0 12px 0; display: block;"></textarea> <br/></P>
+               
+            </ul>
+           <ul>
+           <div style="padding-left:740px;">
+           <input class="reset-button" type="reset"  name="reset" value="Reset" />
+          <input class="cal-button" type="submit"  name="cal" value="Calculate" />
+          <input class="cal-button" type="submit"  name="cal" value="Print" />
+          <input class="submit-button" type="submit"  name="submit" value="Save Requisition" />
+         
+           </div>
+           </ul> 
+            
+            
+            </fieldset>
+		</form>
+               
+        </li>
+            
+            
+          
+            
+        
+         
+         
+        </ul>
+    </div> 
+    
+
+  
+   <table width="100%" height="100" border="1">
+  <tr>
+  <td></td>
+  </tr>
+  </table>
+ 
+  
+</div>
+
+</body>
+</html>

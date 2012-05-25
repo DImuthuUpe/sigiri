@@ -1,0 +1,861 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8">
+		
+		
+		<title>Stock Table - Dyes</title>
+		<style type="text/css" title="currentStyle">
+			@import "media/css/demos.css";
+		</style>
+		<script type="text/javascript" charset="utf-8" src="media/support/jquery.js"></script>
+		<script type="text/javascript" charset="utf-8" src="media/js/KeyTable.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			function fnMessage ( sMesg )
+			{
+				var n = document.getElementById('info');
+				n.innerHTML += sMesg+"<br>";
+				n.scrollTop = n.scrollHeight;
+			}
+			
+			$(document).ready( function () {
+				var keys = new KeyTable();
+				
+				/* Focus handler for all cells in last column */
+				keys.event.focus( 4, null, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - column)" );
+				} );
+				
+				/* Focus handler for all cells in 8th row */
+				keys.event.focus( null, 7, function( nNode, x, y ) {
+					fnMessage( "Cell "+x+","+y+" focused ('live' event - row)" );
+				} );
+				
+				/* Focus using coords. */
+				keys.event.focus( 1, 0, function( nNode ) {
+					keys.event.remove.focus( nNode );
+					fnMessage( "Cell 1,0 focus - this event has now been removed" );
+				} );
+				
+				keys.event.focus( 1, 3, function() {
+					fnMessage( "Cell 1,3 focus" );
+				} );
+				
+				/* focus with a node */
+				keys.event.focus( $('#example tbody tr:eq(2) td:eq(0)')[0], function() {
+					fnMessage( "Cell 0,2 focus" );
+				} );
+				
+				/* Blur using a node */
+				keys.event.blur( $('#example tbody tr:eq(1) td:eq(2)')[0], function() {
+					fnMessage( "Cell 1,2 blur" );
+				} );
+				
+				/* Blur using coords */
+				keys.event.blur( 2, 4, function() {
+					fnMessage( "Cell 2,4 blur" );
+				} );
+				
+				/* Action */
+				keys.event.action( 2, 2, function( nNode ) {
+					fnMessage( "Cell 2,2 action" );
+					if ( nNode.style.fontWeight == "" || nNode.style.fontWeight == "normal" ) {
+						nNode.style.fontWeight = "bold";
+					} else {
+						nNode.style.fontWeight = "normal";
+					}
+				} );
+				
+				keys.event.action( 2, 5, function( nNode ) {
+					fnMessage( "Cell 2,5 action" );
+					if ( nNode.style.fontStyle == "" ) {
+						nNode.style.fontStyle = "italic";
+					} else {
+						nNode.style.fontStyle = "";
+					}
+				} );
+			} );
+		</script>
+	</head>
+	<body id="kt_example">
+		<div id="container">
+			<div class="full_width big">
+				Current Stock - Dyes
+			</div>
+			<div>
+            	 <!--   <a href="Sigiri Web App/menu.jsp"><h1>Back to Main Menu</h1></a>-->
+            </div>
+			
+			
+			<div id="demo">
+<table cellpadding="0" cellspacing="0" border="0" class="display KeyTable" id="example">
+	<thead>
+		<tr>
+			<th>Item Code</th>
+			<th>Item Description</th>
+			<th>Unit Price(LKR)</th>
+			<th>Current Qty(kg)</th>
+			<th>Reorder Level(kg)</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="odd_gradeA">
+			<td>DYE/001</td>
+			<td>AD 18 Brown S2BL</td>
+			<td>900.00</td>
+			<td class="center">30.445</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/002</td>
+			<td>Allion Black XF</td>
+			<td>00.00</td>
+			<td class="center">16.00</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/003</td>
+			<td>Amron Blue HFBR</td>
+			<td>2613.08</td>
+			<td class="center">57.006</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/004</td>
+			<td>Amron Black HR-2D</td>
+			<td>487.96</td>
+			<td class="center">197.935</td>
+			<td class="center">50</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/005</td>
+			<td>Amron Red HF 3B</td>
+			<td>896.00</td>
+			<td class="center">36.375</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/006</td>
+			<td>Amron Red HF-2BL</td>
+			<td>00.00</td>
+			<td class="center">37.668</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/007</td>
+			<td>Amron Sapphir HFNG</td>
+			<td>3432.44</td>
+			<td class="center">106.733</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/008</td>
+			<td>Amron Yellow HFGR</td>
+			<td>1151.00</td>
+			<td class="center">39.199</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/009</td>
+			<td>Amfix Supra Blue R Special</td>
+			<td>00.00</td>
+			<td class="center">20.400</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/010</td>
+			<td>Amron Scarlet HF-4G</td>
+			<td>1543.71</td>
+			<td class="center">4.439</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/011</td>
+			<td>Amfix Turq. Blue G</td>
+			<td>00.00</td>
+			<td class="center">25.00</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/012</td>
+			<td>Amtex Black B 133%</td>
+			<td>00.00</td>
+			<td class="center">57.500</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/013</td>
+			<td>Amron Yellow HF-2GL</td>
+			<td>654.66</td>
+			<td class="center">29.239</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/014</td>
+			<td>Amron Navy HR-2D</td>
+			<td>00.00</td>
+			<td class="center">52.800</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/015</td>
+			<td>Bemacron Red HPRT</td>
+			<td>00.00</td>
+			<td class="center">3.000</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/016</td>
+			<td>Bezathren Black R Micro</td>
+			<td>00.00</td>
+			<td class="center">82.160</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/017</td>
+			<td>Bezathren Dark Blue DB</td>
+			<td>00.00</td>
+			<td class="center">73.900</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/018</td>
+			<td>Bezathren Brown BR</td>
+			<td>00.00</td>
+			<td class="center">55.766</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/019</td>
+			<td>Indenthren(Bezathren Brown BR EPS)</td>
+			<td>00.00</td>
+			<td class="center">5.680</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/020</td>
+			<td>Cibacron Navy Blue FNGN</td>
+			<td>00.00</td>
+			<td class="center">2.5</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/021</td>
+			<td>Cibacron N Blue WB(Novacron)</td>
+			<td>937.64</td>
+			<td class="center">13.960</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/022</td>
+			<td>Cibacron Orange FR</td>
+			<td>00.00</td>
+			<td class="center">27.261</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/023</td>
+			<td>Cibacron Red WB(Novacron)</td>
+			<td>937.64</td>
+			<td class="center">45.062</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/024</td>
+			<td>Concodacron Rubian B</td>
+			<td>00.00</td>
+			<td class="center">4.980</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/025</td>
+			<td>Concodacron Scarlet 2GH</td>
+			<td>00.00</td>
+			<td class="center">1.37</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/026</td>
+			<td>Coralene Scarlet 3R</td>
+			<td>920.00</td>
+			<td class="center">20.625</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/027</td>
+			<td>Corazol Vilot 5R</td>
+			<td>1490.00</td>
+			<td class="center">7.820</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/028</td>
+			<td>Corafix Navy GDB</td>
+			<td>00.00</td>
+			<td class="center">13.250</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/029</td>
+			<td>Disperse Black SECR(Debacron)</td>
+			<td>765.00</td>
+			<td class="center">51.422</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>DYE/030   </td>
+			<td>Disperse Red FB</td>
+			<td>1480.00</td>
+			<td class="center">1.4</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/031</td>
+			<td>Disperse Navy EXN</td>
+			<td>00.00</td>
+			<td class="center">30.974</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/032</td>
+			<td>Dianix Blue XF</td>
+			<td>00.00</td>
+			<td class="center">10.300</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>DYE/033</td>
+			<td>Dianix Yellow Brown CC</td>
+			<td>1328.56</td>
+			<td class="center">2.236</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/034</td>
+			<td>Disperse Violet S3RL</td>
+			<td>1680.00</td>
+			<td class="center">11.778</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/035</td>
+			<td>Dispesol Flavin XF</td>
+			<td>00.00</td>
+			<td class="center">3.000</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/036</td>
+			<td>Disperse Orange CEFN</td>
+			<td>00.00</td>
+			<td class="center">5.000</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/037</td>
+			<td>Disperse Golden Yellow CEFN</td>
+			<td>2100.00</td>
+			<td class="center">33.5</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/038</td>
+			<td>Disperse N Blue EXN(Finax)</td>
+			<td>00.00</td>
+			<td class="center">30.445</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/039</td>
+			<td>Disperse Violet HRB</td>
+			<td>1800.00</td>
+			<td class="center">7.013</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/040</td>
+			<td>Everzol Black ED 2R</td>
+			<td>00.00</td>
+			<td class="center">47.200</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/041</td>
+			<td>Everzol Navy ED</td>
+			<td>1500.00</td>
+			<td class="center">36.800</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/042</td>
+			<td>Disperse Turquise B BG</td>
+			<td>2380.00</td>
+			<td class="center">43.226</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/043</td>
+			<td>Everzol Red ED</td>
+			<td>1500.00</td>
+			<td class="center">19.751</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>DYE/044</td>
+			<td>Everzol Red ED 3B/</td>
+			<td>00.00</td>
+			<td class="center">5.360</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/045</td>
+			<td>Everzol Scarlet 3GF</td>
+			<td>1500.00</td>
+			<td class="center">42.800</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/046</td>
+			<td>Fina Orange ECH</td>
+			<td>00.00</td>
+			<td class="center">21.648</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/047</td>
+			<td>Fina Orange H3R</td>
+			<td>00.00</td>
+			<td class="center">27.708</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/048</td>
+			<td>Indanthrene Red FGL</td>
+			<td>00.00</td>
+			<td class="center">12.179</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/049</td>
+			<td>Indanthrene Brown BR</td>
+			<td>00.00</td>
+			<td class="center">5.680</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/050</td>
+			<td>Bezathren Brown BR</td>
+			<td>00.00</td>
+			<td class="center">55.766</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/051</td>
+			<td>Introzol Black BHY</td>
+			<td>00.00</td>
+			<td class="center">39.078</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/052</td>
+			<td>Introzol Yellow 3GL</td>
+			<td>00.00</td>
+			<td class="center">24.878</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="odd_gradeX">
+			<td>DYE/053</td>
+			<td>Jakazol Black CESL</td>
+			<td>436.80</td>
+			<td class="center">12.031</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/054</td>
+			<td>Jakofix Red ME4BL</td>
+			<td>638.45</td>
+			<td class="center">25.880</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/055</td>
+			<td>Kelon Polyester Yellow 4RE</td>
+			<td>1145.00</td>
+			<td class="center">15.600</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/056</td>
+			<td>Jackazol Turq. Blue PG</td>
+			<td>649.65</td>
+			<td class="center">607.206</td>
+			<td class="center">25</td>
+		</tr>
+		<tr class="odd_gradeA">
+			<td>DYE/057</td>
+			<td>Liverfix Brill Red F-RN</td>
+			<td>00.00</td>
+			<td class="center">20.300</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/058</td>
+			<td>Liverfix Brill Blue E-GRN</td>
+			<td>00.00</td>
+			<td class="center">45.000</td>
+			<td class="center">N / A</td>
+		</tr>
+            <tr class="odd_gradeA">
+			<td>DYE/059</td>
+			<td>Lonsperse Scarlet LXF</td>
+			<td>1700.00</td>
+			<td class="center">20.766</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/060</td>
+			<td>Lonsperse Red FB</td>
+			<td>1700.00</td>
+			<td class="center">25.876</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/061</td>
+			<td>Lonsperse Yellow M4GL</td>
+			<td>960.00</td>
+			<td class="center">6.000</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/062</td>
+			<td>Lonsperse Red BS</td>
+			<td>00.00</td>
+			<td class="center">10.500</td>
+			<td class="center">05</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/063</td>
+			<td>Novacron Blue FNR(Cibacron)</td>
+			<td>2649.00</td>
+			<td class="center">24.478</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/064</td>
+			<td>Novacron Yellow FN2R(Cibacron)</td>
+			<td>3208.92</td>
+			<td class="center">17.909</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/065</td>
+			<td>Novacron Navy WB(Cibacron)</td>
+			<td>937.64</td>
+			<td class="center">13.960</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/066</td>
+			<td>Novacron Red FNR(Cibacron)</td>
+			<td>2611.10</td>
+			<td class="center">18.180</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/067</td>
+			<td>Novacron Red WB(Cibacron)</td>
+			<td>937.64</td>
+			<td class="center">45.062</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/068</td>
+			<td>Ramazol Brilliant Yellow 3GL</td>
+			<td>00.00</td>
+			<td class="center">14.000</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/069</td>
+			<td>Rifafix Violet 5RN</td>
+			<td>00.00</td>
+			<td class="center">1.070</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/070</td>
+			<td>Rifafix Red BBN</td>
+			<td>00.00</td>
+			<td class="center">1.400</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/071</td>
+			<td>Seraline Blue VX-BLN</td>
+			<td>00.00</td>
+			<td class="center">20.800</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/072</td>
+			<td>Seraline Crimsion ADS</td>
+			<td>00.00</td>
+			<td class="center">41.625</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/073</td>
+			<td>Seraline Golden Yellow ADS</td>
+			<td>00.00</td>
+			<td class="center">13.255</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/074</td>
+			<td>Seraline Navy Blue ADS</td>
+			<td>00.00</td>
+			<td class="center">14.000</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/075</td>
+			<td>Seraline Yellow ADS</td>
+			<td>00.00</td>
+			<td class="center">18.900</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/076</td>
+			<td>Solozol Red SPBR</td>
+			<td>00.00</td>
+			<td class="center">6.460</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/077</td>
+			<td>Sumifix BR. Blue R</td>
+			<td>00.00</td>
+			<td class="center">1.020</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/078</td>
+			<td>Sumifix Scarlet HF2G</td>
+			<td>1805.00</td>
+			<td class="center">10.877</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/079</td>
+			<td>Sumifix Supra Blue EXF</td>
+			<td>3150.00</td>
+			<td class="center">26.692</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/080</td>
+			<td>Sumifix Supra Marine EXF</td>
+			<td>2210.00</td>
+			<td class="center">25.985</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/081</td>
+			<td>Sumifix Supra Red EXF</td>
+			<td>1520.00</td>
+			<td class="center">25.451</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/082</td>
+			<td>Sumifix Supra Yellow 4GL</td>
+			<td>1825.00</td>
+			<td class="center">23.967</td>
+			<td class="center">05</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/083</td>
+			<td>Sumifix Supra Yellow EXF</td>
+			<td>1380.00</td>
+			<td class="center">23.508</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/084</td>
+			<td>Sumifix Supra Red GF</td>
+			<td>00.00</td>
+			<td class="center">0.618</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/085</td>
+			<td>Sumifix Turquise Blue BGF </td>
+			<td>3350.00</td>
+			<td class="center">6.400</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/086</td>
+			<td>Synosol Brill Blue KRL</td>
+			<td>00.00</td>
+			<td class="center">52.000</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/087</td>
+			<td>Terasil Blue 3RL-02 150%</td>
+			<td>2997.21</td>
+			<td class="center">18.943</td>
+			<td class="center">10</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/088</td>
+			<td>Terasil Dark Blue 3R</td>
+			<td>3900.00</td>
+			<td class="center">21.674</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/089</td>
+			<td>Terasil Flavin 8GF</td>
+			<td>00.00</td>
+			<td class="center">3.791</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/090</td>
+			<td>Terasil Navy Blue GRL</td>
+			<td>00.00</td>
+			<td class="center">14.845</td>
+			<td class="center">05</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/091</td>
+			<td>Terasil Navy WRS</td>
+			<td>00.00</td>
+			<td class="center">6.175</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/092</td>
+			<td>Terasil Red 3BL 150%</td>
+			<td>2478.00</td>
+			<td class="center">11.460</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeX">
+			<td>DYE/093</td>
+			<td>Terasil Violet BL</td>
+			<td>00.00</td>
+			<td class="center">0.360</td>
+			<td class="center">01</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/094</td>
+			<td>Zenix Yellow Brown XF</td>
+			<td>00.00</td>
+			<td class="center">20.640</td>
+			<td class="center">05</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/095</td>
+			<td>Zenix Rubine XF</td>
+			<td>1240.00</td>
+			<td class="center">12.639</td>
+			<td class="center">05</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/096</td>
+			<td>Zenix Navy XF</td>
+			<td>2420.00</td>
+			<td class="center">52.714</td>
+			<td class="center">10</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/097</td>
+			<td>Zenix Scarlet 2GH(Disperse)</td>
+			<td>00.00</td>
+			<td class="center">10.000</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/098</td>
+			<td>Kayacelon React Yellow CN EX</td>
+			<td>00.00</td>
+			<td class="center">5.000</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/099</td>
+			<td>Kayacelon React Yellow CN 4G </td>
+			<td>00.00</td>
+			<td class="center">4.980</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/100</td>
+			<td>Kayacelon React Red CNN 3B</td>
+			<td>00.00</td>
+			<td class="center">5.000</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/101</td>
+			<td>Kayacelon React Blue CN MG</td>
+			<td>00.00</td>
+			<td class="center">5.000</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/102</td>
+			<td>Kayacelon React CN 2G</td>
+			<td>00.00</td>
+			<td class="center">2.740</td>
+			<td class="center">N / A</td>
+		</tr>
+        <tr class="odd_gradeA">
+			<td>DYE/103</td>
+			<td>Terasil Black MAW</td>
+			<td>600.00</td>
+			<td class="center">8.259</td>
+			<td class="center">N / A</td>
+		</tr>
+		<tr class="even_gradeA">
+			<td>DYE/104</td>
+			<td>Disperse Yellow 4G</td>
+			<td>00.00</td>
+			<td class="center">24.856</td>
+			<td class="center">N / A</td>
+		</tr>
+                 <tr class="odd_gradeA">
+			<td>DYE/105</td>
+			<td>Sunwhite PA Conc</td>
+			<td>780.00</td>
+			<td class="center">5.000</td>
+			<td class="center">N / A</td>
+		</tr>
+	</tbody>
+</table>
+
+
+
+			</div>
+			<div class="spacer"></div>
+			
+			<div>
+             <!--   <a href="Sigiri Web App/menu.jsp"><h1>Back to Main Menu</h1></a>--> 
+            </div>
+			
+			
+			
+			
+			
+			
+			<div id="footer" style="text-align:center;">
+				<span style="font-size:10px;">
+					Stock Table 2012.<br>
+					</span>
+			</div>
+		</div>
+	</body>
+</html>
